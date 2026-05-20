@@ -1,0 +1,61 @@
+Stock,Price,Trend,RSI,Signal
+RELIANCE.NS,"Ticker
+RELIANCE.NS    1404.8
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,47.17,HOLD
+TCS.NS,"Ticker
+TCS.NS    2557.6
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,30.75,HOLD
+INFY.NS,"Ticker
+INFY.NS    1308.4
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,35.22,HOLD
+HDFCBANK.NS,"Ticker
+HDFCBANK.NS    857.05
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,32.3,HOLD
+ICICIBANK.NS,"Ticker
+ICICIBANK.NS    1313.4
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,19.15,BUY
+SBIN.NS,"Ticker
+SBIN.NS    1143.0
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,32.54,BUY
+ITC.NS,"Ticker
+ITC.NS    309.7
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,45.6,HOLD
+LT.NS,"Ticker
+LT.NS    3949.8
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,40.62,HOLD
+AXISBANK.NS,"Ticker
+AXISBANK.NS    1315.8
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,45.89,HOLD
+KOTAKBANK.NS,"Ticker
+KOTAKBANK.NS    399.8
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,35.33,HOLD
+BAJFINANCE.NS,"Ticker
+BAJFINANCE.NS    950.2
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,26.58,BUY
+ASIANPAINT.NS,"Ticker
+ASIANPAINT.NS    2279.5
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,35.44,HOLD
+MARUTI.NS,"Ticker
+MARUTI.NS    14159.0
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,30.47,HOLD
+HCLTECH.NS,"Ticker
+HCLTECH.NS    1356.7
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,31.6,HOLD
+WIPRO.NS,"Ticker
+WIPRO.NS    195.4
+Name: 2026-03-06 00:00:00, dtype: float64",Bearish,15.86,HOLD
+ONGC.NS,"Ticker
+ONGC.NS    278.95
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,73.17,SELL
+ULTRACEMCO.NS,"Ticker
+ULTRACEMCO.NS    11987.0
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,28.35,BUY
+NTPC.NS,"Ticker
+NTPC.NS    380.6
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,63.02,HOLD
+POWERGRID.NS,"Ticker
+POWERGRID.NS    299.15
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,60.79,HOLD
+TITAN.NS,"Ticker
+TITAN.NS    4244.6
+Name: 2026-03-06 00:00:00, dtype: float64",Bullish,56.49,HOLD
