@@ -11,27 +11,21 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 from streamlit_autorefresh import st_autorefresh
 
-# =========================================================
-# PAGE CONFIG
-# =========================================================
+
 
 st.set_page_config(
     page_title="AI Stock Analyzer Pro",
     layout="wide"
 )
 
-# =========================================================
-# AUTO REFRESH
-# =========================================================
+
 
 st_autorefresh(
     interval=60000,
     key="refresh"
 )
 
-# =========================================================
-# CUSTOM CSS
-# =========================================================
+
 
 st.markdown("""
 <style>
@@ -50,15 +44,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# =========================================================
-# TITLE
-# =========================================================
+
 
 st.title("📈 AI STOCK ANALYZER PRO")
 
-# =========================================================
-# SIDEBAR
-# =========================================================
+
 
 st.sidebar.title("📊 Navigation")
 
@@ -78,9 +68,7 @@ page = st.sidebar.radio(
     ]
 )
 
-# =========================================================
-# STOCK LIST
-# =========================================================
+
 
 stocks = {
     "RELIANCE": "RELIANCE.NS",
@@ -103,9 +91,7 @@ stocks = {
     "JSWSTEEL": "JSWSTEEL.NS"
 }
 
-# =========================================================
-# SEARCH STOCK
-# =========================================================
+
 
 search_stock = st.sidebar.text_input(
     "🔍 Search Stock"
@@ -122,9 +108,6 @@ else:
 
     filtered = stocks
 
-# =========================================================
-# DOWNLOAD DATA
-# =========================================================
 
 @st.cache_data(ttl=3600)
 
@@ -163,9 +146,6 @@ def safe_download(symbol, period="1y"):
 
         return None
 
-# =========================================================
-# LOAD DATA
-# =========================================================
 
 all_data = {}
 
@@ -175,9 +155,6 @@ with st.spinner("Loading Market Data..."):
 
         all_data[name] = safe_download(symbol)
 
-# =========================================================
-# DRAW CHART
-# =========================================================
 
 def draw_chart(df, name):
 
@@ -204,7 +181,7 @@ def draw_chart(df, name):
         row_heights=[0.6, 0.2, 0.2]
     )
 
-    # CANDLESTICK
+    
 
     fig.add_trace(go.Candlestick(
         x=df.index,
@@ -215,7 +192,7 @@ def draw_chart(df, name):
         name=name
     ), row=1, col=1)
 
-    # MA20
+   
 
     fig.add_trace(go.Scatter(
         x=df.index,
@@ -223,7 +200,7 @@ def draw_chart(df, name):
         name="MA20"
     ), row=1, col=1)
 
-    # MA50
+   
 
     fig.add_trace(go.Scatter(
         x=df.index,
@@ -231,7 +208,7 @@ def draw_chart(df, name):
         name="MA50"
     ), row=1, col=1)
 
-    # BUY SELL
+   
 
     buy = df[df["pos"] == 1]
     sell = df[df["pos"] == -1]
@@ -258,7 +235,7 @@ def draw_chart(df, name):
         name="SELL"
     ), row=1, col=1)
 
-    # SUPPORT RESISTANCE
+    
 
     fig.add_hline(
         y=support,
@@ -270,7 +247,7 @@ def draw_chart(df, name):
         line_color="red"
     )
 
-    # VOLUME
+    
 
     fig.add_trace(go.Bar(
         x=df.index,
@@ -278,7 +255,7 @@ def draw_chart(df, name):
         name="Volume"
     ), row=2, col=1)
 
-    # RSI
+    
 
     delta = close.diff()
 
@@ -306,9 +283,7 @@ def draw_chart(df, name):
 
     return fig
 
-# =========================================================
-# MARKET PAGE
-# =========================================================
+
 
 if page == "Market":
 
@@ -320,9 +295,6 @@ if page == "Market":
         f"Total Stocks Loaded: {len(filtered)}"
     )
 
-# =========================================================
-# GAINERS LOSERS
-# =========================================================
 
 elif page == "Gainers/Losers":
 
@@ -367,9 +339,7 @@ elif page == "Gainers/Losers":
         ).head()
     )
 
-# =========================================================
-# ANALYZER
-# =========================================================
+
 
 elif page == "Analyzer":
 
@@ -435,9 +405,7 @@ elif page == "Analyzer":
                 "text/csv"
             )
 
-# =========================================================
-# SCANNER
-# =========================================================
+
 
 elif page == "Scanner":
 
@@ -476,9 +444,6 @@ elif page == "Scanner":
             pd.DataFrame(results)
         )
 
-# =========================================================
-# BREAKOUTS
-# =========================================================
 
 elif page == "Breakouts":
 
@@ -512,9 +477,7 @@ elif page == "Breakouts":
             pd.DataFrame(res)
         )
 
-# =========================================================
-# PORTFOLIO
-# =========================================================
+
 
 elif page == "Portfolio":
 
@@ -567,9 +530,7 @@ elif page == "Portfolio":
             pd.DataFrame(res)
         )
 
-# =========================================================
-# HEATMAP
-# =========================================================
+
 
 elif page == "Heatmap":
 
@@ -608,9 +569,7 @@ elif page == "Heatmap":
         )
     )
 
-# =========================================================
-# SECTOR AI
-# =========================================================
+
 
 elif page == "Sector AI":
 
@@ -681,9 +640,7 @@ elif page == "Sector AI":
         pd.DataFrame(res)
     )
 
-# =========================================================
-# NEWS AI
-# =========================================================
+
 
 elif page == "News AI":
 
@@ -735,9 +692,7 @@ elif page == "News AI":
             pd.DataFrame(results)
         )
 
-# =========================================================
-# AI PREDICTION
-# =========================================================
+
 
 elif page == "AI Prediction":
 
